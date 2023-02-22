@@ -55,7 +55,7 @@ Content of XmlSettings.json:
 }
 ```
 
-Your project structure should look like this:
+At the end your project structure should look like this:
 ```
 └── NottisimusTestProject
   └── Tests
