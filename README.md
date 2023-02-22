@@ -55,6 +55,23 @@ Content of XmlSettings.json:
 }
 ```
 
+Your project structure should look like this:
+```
+└── NottisimusTestProject
+  └── Tests
+    └── JsonOptions  
+      └── XmlSettings.json  
+      └── DbSettings.json  
+      ...  
+  └── Web  
+    └── JsonOptions  
+      └── XmlSettings.json  
+      └── DbSettings.json  
+      ...  
+  └── Xml
+    ...
+  ```
+
 #### 2. Connecting to MSSQL Server
 You can download MSSQL Server docker image [here](https://hub.docker.com/_/microsoft-mssql-server). Follow the instuctions.
 
