@@ -1,0 +1,94 @@
+﻿@model Xml.Models.DbRecords.OfferModel?
+
+@{
+    ViewBag.Title = "Offer";
+    Layout = "_Layout";
+}
+
+<h3> Задание </h3>
+<ol>
+    <li>
+        При открытии страницы должна подгружаться информация из
+        <a class="link-dark" href="http://partner.market.yandex.ru/pages/help/YML.xml"> XML файла </a>
+    </li>
+    <li> После обработки файла из полученного списка offers найти offer с Id = 12344 </li>
+    <li> Сохранить offer в базу данных SQL SERVER через Entity. Если уже есть offer с таким Id, то <strong> сохранять не нужно. </strong> </li>
+    <li> Отобразить offer на View. Верстка bootstrap.</li>
+</ol>
+
+@if (Model != null)
+{
+    <h3> Вывод на экран Offer с id = @Model.Id </h3>
+
+    <table class="table">
+        <tr>
+            <th> Type </th>
+            <td> @Model.Type </td>
+        </tr>
+        <tr>
+            <th> BId </th>
+            <td> @Model.Bid </td>
+        </tr>
+        <tr>
+            <th> Available </th>
+            <td> @Model.Available </td>
+        </tr>
+        <tr>
+            <th> Url </th>
+            <td> @Model.Url </td>
+        </tr>
+        <tr>
+            <th> Price </th>
+            <td> @Model.Price </td>
+        </tr>
+
+        <tr>
+            <th> CurrencyId </th>
+            <td> @Model.CurrencyId </td>
+        </tr>
+
+        <tr>
+            <th> Category Id </th>
+            <td> @Model.CategoryId.Id </td>
+        </tr>
+
+        <tr>
+            <th> Category Type </th>
+            <td> @Model.CategoryId.Type </td>
+        </tr>
+
+        <tr>
+            <th> Picture </th>
+            <td> @Model.Picture </td>
+        </tr>
+
+        <tr>
+            <th> Delivery </th>
+            <td> @Model.Delivery </td>
+        </tr>
+
+        <tr>
+            <th> Artist </th>
+            <td> @Model.Artist </td>
+        </tr>
+
+        <tr>
+            <th> Title </th>
+            <td> @Model.Title </td>
+        </tr>
+
+        <tr>
+            <th> Year </th>
+            <td> @Model.Year </td>
+        </tr>
+        <tr>
+            <th> Media </th>
+            <td> @Model.Media </td>
+        </tr>
+        <tr>
+            <th> Description </th>
+            <td> @Model.Description </td>
+        </tr>
+
+    </table>
+}
