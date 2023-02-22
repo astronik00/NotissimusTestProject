@@ -2,11 +2,12 @@
 ASP.NET MVC Application
 
 ## Technologies
-- ASP.NET Core
-- Entity Framework
+- ASP.NET Core 7.0
+- Entity Framework 8.0
 - MSSQL Server (used Docker container from Docker Hub)
 - NUnit
 - Bootstrap
+- Docker 4.16.3
 
 ## How to run
 ### Before run
