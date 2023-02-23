@@ -1,0 +1,7 @@
+{
+  "Server": "YourServer",
+  "Database": "YourDb",
+  "UserId": "YourUserId",
+  "Password": "YourPassword",
+  "TrustServerCertificate": true
+}
