@@ -14,7 +14,7 @@ ASP.NET MVC Application
 #### 1. Creating configuration files
 Take note that before trying to start the app, you need to change configuration files 'DbSettings.json' in [Tests](/Tests/JsonOptions/) and [Web](/Web/JsonOptions/)  and specify your connection parameters. 
 
-File content of Web options:
+File contents of 'DbSettings.json' in Web:
 ```
 {
   "DbConnectionSettings": 
@@ -28,7 +28,7 @@ File content of Web options:
 }
 ```
 
-**Notice** that the first one contains the key value and the second should not. File content of Tests options:
+**Notice** that the first one contains the key value and the second should not. File contents of 'DbSettings.json' in Tests:
 ```
 {
   "Server": "localhost,1433",
