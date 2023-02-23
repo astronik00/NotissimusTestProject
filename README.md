@@ -73,7 +73,7 @@ At the end your project structure should look like this:
   ```
 
 #### 2. Connecting to MSSQL Server
-You can download MSSQL Server docker image [here](https://hub.docker.com/_/microsoft-mssql-server). 
+MSSQL Server docker image [here](https://hub.docker.com/_/microsoft-mssql-server). 
 
 Download image:
 
