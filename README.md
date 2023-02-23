@@ -73,7 +73,18 @@ At the end your project structure should look like this:
   ```
 
 #### 2. Connecting to MSSQL Server
-You can download MSSQL Server docker image [here](https://hub.docker.com/_/microsoft-mssql-server). Follow the instuctions.
+You can download MSSQL Server docker image [here](https://hub.docker.com/_/microsoft-mssql-server). 
+
+Download image:
+
+```
+docker pull mcr.microsoft.com/mssql/server
+```
+
+Create container and start it:
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
 
 
 ### Run
