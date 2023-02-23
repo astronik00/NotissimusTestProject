@@ -12,7 +12,7 @@ ASP.NET MVC Application
 ## How to run
 ### Before run
 #### 1. Creating configuration files
-Take note that before trying to start the app, you need to change configuration files 'DbSettings.json' in [Tests](/Tests/JsonOptions/) and [Web](/Web/JsonOptions/)  and specify your connection parameters. 
+Take note that before trying to start the app, you need to change configuration files 'DbSettings.json' in [Tests](/Tests/JsonOptions/DbSettings.json) and [Web](/Web/JsonOptions/DbSettings.json)  and specify your connection parameters. 
 
 File contents of 'DbSettings.json' in Web:
 ```
@@ -28,7 +28,7 @@ File contents of 'DbSettings.json' in Web:
 }
 ```
 
-**Notice** that the first one contains the key value and the second should not. File contents of 'DbSettings.json' in Tests:
+**Notice** that the first one **contains the key value** and the second **should not**. File contents of 'DbSettings.json' in Tests:
 ```
 {
   "Server": "localhost,1433",
