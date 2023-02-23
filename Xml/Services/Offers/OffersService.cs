@@ -24,18 +24,19 @@ public class OffersService : IOffersService
         _xmlSerializer = new XmlSerializer(typeof(OfferXmlModel));
     }
 
-    public void AddOffer(int id)
+    public async Task AddOffer(int id, CancellationToken token = default)
     {
+        await Task.Yield();
         var elements = XElement.Load(_xmlReadFileOptions.Url)
                                .Descendants("offer")
-                               .First(_ => (int)_.Attribute("id")! == id)
+                               .First(x => (int)x.Attribute("id")! == id)
                                .CreateReader();
         var offer = (OfferXmlModel)_xmlSerializer.Deserialize(elements)!;
-        _offersContext.AddOffer(offer.CreateOfferRecord());
+        await _offersContext.AddOffer(offer.CreateOfferRecord(), token);
     }
 
-    public OfferModel? GetOffer(int id)
+    public async Task<OfferModel?> GetOffer(int id, CancellationToken token = default)
     {
-        return _offersContext.GetOffer(id);
+        return await _offersContext.GetOffer(id, token);
     }
 }

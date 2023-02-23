@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Xml.Models.DbRecords;
@@ -63,7 +64,7 @@ public class Tests
 
         if (_applicationContext.Offers.Any())
         {
-            _offersService.AddOffer(testId);
+            _offersService.AddOffer(testId).Wait();
             var testIdCount = _applicationContext.Offers.Count(_ => _.Id == testId);
             Assert.That(testIdCount, Is.EqualTo(1));
         }
@@ -78,6 +79,6 @@ public class Tests
     public void TestCorrectGettingOffer()
     {
         const int testId = 12344;
-        Assert.That(GetDemoOffer(), Is.EqualTo(_offersService.GetOffer(testId)));
+        Assert.That(GetDemoOffer(), Is.EqualTo(_offersService.GetOffer(testId).Result));
     }
 }

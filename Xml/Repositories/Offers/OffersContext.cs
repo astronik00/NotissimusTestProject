@@ -12,22 +12,22 @@ public class OffersContext : IOffersContext
         _applicationContext = applicationContext;
     }
 
-    public void AddOffer(OfferModel offer)
+    public async Task AddOffer(OfferModel offer, CancellationToken token)
     {
-        if (_applicationContext.Offers
+        if (await _applicationContext.Offers
                                .AsQueryable()
-                               .Any(_ => _.Id == offer.Id))
+                               .AnyAsync(_ => _.Id == offer.Id, token))
             return;
 
-        _applicationContext.Offers.Add(offer);
-        _applicationContext.SaveChanges();
+        await _applicationContext.Offers.AddAsync(offer, token);
+        await _applicationContext.SaveChangesAsync(token);
     }
 
-    public OfferModel? GetOffer(int id)
+    public async Task<OfferModel?> GetOffer(int id, CancellationToken token)
     {
-        return _applicationContext.Offers
-                                  .AsQueryable()
-                                  .Include(_ => _.CategoryId)
-                                  .FirstOrDefault(_ => _.Id == id);
+        return await _applicationContext.Offers
+                                        .AsQueryable()
+                                        .Include(_ => _.CategoryId)
+                                        .FirstAsync(_ => _.Id == id, token);
     }
 }

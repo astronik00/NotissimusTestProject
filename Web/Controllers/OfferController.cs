@@ -14,10 +14,10 @@ public class OfferController : Controller
     private IOffersService OffersService { get; }
 
     [HttpGet("/")]
-    public ViewResult Index()
+    public async Task<ViewResult> GetOfferAsync(CancellationToken token)
     {
         const int offerId = 12344;
-        OffersService.AddOffer(offerId);
-        return View("Offer", OffersService.GetOffer(offerId));
+        await OffersService.AddOffer(offerId, token);
+        return View("Offer", await OffersService.GetOffer(offerId, token));
     }
 }
