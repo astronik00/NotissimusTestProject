@@ -28,7 +28,7 @@ File contents of 'DbSettings.json' in Web:
 }
 ```
 
-**Notice** that the first one contains the key value and the second should not. File contents of 'DbSettings.json' in Tests:
+**Notice** that the first one **contains the key value** and the second **should not**. File contents of 'DbSettings.json' in Tests:
 ```
 {
   "Server": "localhost,1433",
