@@ -1,7 +1,9 @@
 {
-  "Server": "YourServer",
-  "Database": "YourDb",
-  "UserId": "YourUserId",
-  "Password": "YourPassword",
-  "TrustServerCertificate": true
+  "DbConnectionSettings" : {
+    "Server": "YourServer",
+    "Database": "YourDb",
+    "UserId": "YourUserId",
+    "Password": "YourPassword",
+    "TrustServerCertificate": true
+  }
 }
